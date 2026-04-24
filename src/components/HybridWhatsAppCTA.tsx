@@ -35,7 +35,7 @@ Terima kasih 🙏
     <>
       {/* ================= MOBILE STICKY ================= */}
       <motion.div
-        initial={{ y: 40, opacity: 0 }}
+        initial={{ y: 60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
@@ -46,33 +46,58 @@ Terima kasih 🙏
             backdrop-blur-xl
             border-t border-[rgb(var(--color-border))]
             px-4 py-3
-            flex items-center justify-between
           "
         >
-          <div className="flex flex-col">
-            <span className="text-[11px] font-medium text-[rgb(var(--color-text))]">
-              Mari jaga bumi bersama 🌱
-            </span>
-            <span className="text-[10px] text-[rgb(var(--color-muted))]">
-              Donasi • Relawan • Kolaborasi
-            </span>
-          </div>
+          <div className="flex items-center justify-between gap-3">
 
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary flex items-center gap-2 text-[12px]"
-          >
-            <MessageCircle className="w-3.5 h-3.5" />
-            Hubungi
-          </a>
+            {/* TEXT */}
+            <div className="flex flex-col leading-tight">
+              <span className="text-[11.5px] font-medium text-[rgb(var(--color-text))]">
+                Mari jaga bumi bersama 🌱
+              </span>
+              <span className="text-[10px] text-[rgb(var(--color-muted))]">
+                Donasi • Relawan • Kolaborasi
+              </span>
+            </div>
+
+            {/* CTA BUTTON */}
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                flex-shrink-0
+                inline-flex items-center justify-center gap-2
+
+                px-4 py-2.5
+                min-w-[120px]
+
+                rounded-[999px]
+
+                bg-[rgb(var(--color-primary))]
+                text-[rgb(var(--color-white))]
+
+                text-[12px] font-medium
+
+                shadow-[var(--shadow-soft)]
+
+                transition-all duration-300
+                hover:bg-[rgb(var(--color-primary-dark))]
+                hover:shadow-[var(--shadow-medium)]
+                active:scale-[0.97]
+              "
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              Hubungi
+            </a>
+
+          </div>
         </div>
       </motion.div>
 
       {/* ================= DESKTOP FLOAT ================= */}
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="hidden md:flex fixed bottom-6 right-6 z-50"
@@ -84,23 +109,37 @@ Terima kasih 🙏
           className="
             group
             inline-flex items-center gap-3
+
             px-5 py-3
-            rounded-[var(--radius-md)]
+
+            rounded-[999px]
+
             bg-[rgb(var(--color-primary))]
             text-[rgb(var(--color-white))]
+
             shadow-[var(--shadow-medium)]
+
             transition-all duration-300
             hover:-translate-y-[2px]
             hover:bg-[rgb(var(--color-primary-dark))]
           "
         >
-          <MessageCircle className="w-4 h-4" />
+          <div
+            className="
+              w-9 h-9
+              flex items-center justify-center
+              rounded-full
+              bg-[rgb(var(--color-white))]/15
+            "
+          >
+            <MessageCircle className="w-4 h-4" />
+          </div>
 
           <div className="flex flex-col leading-tight">
-            <span className="text-[12px] font-medium">
+            <span className="text-[12.5px] font-medium">
               Hubungi Kami
             </span>
-            <span className="text-[10px] text-[rgb(var(--color-white))]/80">
+            <span className="text-[10.5px] text-[rgb(var(--color-white))]/80">
               Donasi • Relawan • Kolaborasi
             </span>
           </div>

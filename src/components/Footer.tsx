@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <Image
                 src={cloudinaryImage(
-                  "https://res.cloudinary.com/de7fqcvpf/image/upload/v1776396374/logo-nbl.png",
+                  "https://res.cloudinary.com/de7fqcvpf/image/upload/v1777015180/NBL_Png_Green_vlqrsj.png",
                   "logo"
                 )}
                 alt="Nusa Bumi Lestari"
