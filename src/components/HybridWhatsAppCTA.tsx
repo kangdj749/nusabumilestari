@@ -1,30 +1,35 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import { MessageCircle } from "lucide-react"
 
 export default function WhatsAppCTA() {
-  const whatsappNumber = "6287765505935";
-  const [waLink, setWaLink] = useState<string>("");
+  const whatsappNumber: string = "6287765505935"
+  const [waLink, setWaLink] = useState<string>("")
 
   useEffect(() => {
-    const defaultMessage = `
+    const message: string = `
 Assalamu'alaikum,
 
-Saya ingin berkonsultasi terkait layanan PT Bangun Cipta Solusi (BANGUN.IN).
+Saya tertarik dengan program Yayasan Nusa Bumi Lestari 🌱
+
+Saya ingin:
+• Berdonasi
+• Menjadi relawan
+• Atau berkolaborasi
 
 Mohon informasi lebih lanjut.
-    `.trim();
+
+Terima kasih 🙏
+    `.trim()
 
     setWaLink(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-        defaultMessage
-      )}`
-    );
-  }, []);
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+    )
+  }, [])
 
-  if (!waLink) return null;
+  if (!waLink) return null
 
   return (
     <>
@@ -37,37 +42,37 @@ Mohon informasi lebih lanjut.
       >
         <div
           className="
-            bg-[rgb(var(--color-surface))]
-            border-t
-            border-[rgb(var(--color-secondary))]/20
-            px-4
-            py-2.5
-            flex
-            items-center
-            justify-between
+            bg-[rgb(var(--color-white))]/95
+            backdrop-blur-xl
+            border-t border-[rgb(var(--color-border))]
+            px-4 py-3
+            flex items-center justify-between
           "
         >
-          <span className="text-[11px] font-medium text-[rgb(var(--color-text))]">
-            Konsultasi Profesional
-          </span>
+          <div className="flex flex-col">
+            <span className="text-[11px] font-medium text-[rgb(var(--color-text))]">
+              Mari jaga bumi bersama 🌱
+            </span>
+            <span className="text-[10px] text-[rgb(var(--color-muted))]">
+              Donasi • Relawan • Kolaborasi
+            </span>
+          </div>
 
           <a
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="
-              btn btn-primary
-            "
+            className="btn-primary flex items-center gap-2 text-[12px]"
           >
             <MessageCircle className="w-3.5 h-3.5" />
-            WhatsApp
+            Hubungi
           </a>
         </div>
       </motion.div>
 
       {/* ================= DESKTOP FLOAT ================= */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="hidden md:flex fixed bottom-6 right-6 z-50"
@@ -78,27 +83,29 @@ Mohon informasi lebih lanjut.
           rel="noopener noreferrer"
           className="
             group
-            inline-flex
-            items-center
-            gap-2
-            px-4
-            py-2
-            text-[11px]
-            font-medium
-            rounded-[var(--radius-sm)]
+            inline-flex items-center gap-3
+            px-5 py-3
+            rounded-[var(--radius-md)]
             bg-[rgb(var(--color-primary))]
             text-[rgb(var(--color-white))]
-            border
-            border-[rgb(var(--color-primary))]/30
-            transition-all
-            duration-300
-            hover:-translate-y-[1px]
+            shadow-[var(--shadow-medium)]
+            transition-all duration-300
+            hover:-translate-y-[2px]
+            hover:bg-[rgb(var(--color-primary-dark))]
           "
         >
           <MessageCircle className="w-4 h-4" />
-          <span>Hubungi Konsultan</span>
+
+          <div className="flex flex-col leading-tight">
+            <span className="text-[12px] font-medium">
+              Hubungi Kami
+            </span>
+            <span className="text-[10px] text-[rgb(var(--color-white))]/80">
+              Donasi • Relawan • Kolaborasi
+            </span>
+          </div>
         </a>
       </motion.div>
     </>
-  );
+  )
 }

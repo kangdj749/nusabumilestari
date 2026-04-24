@@ -16,7 +16,7 @@ interface Props {
 
 export default function NavbarClient({ posts }: Props) {
   const logo =
-    "https://res.cloudinary.com/de7fqcvpf/image/upload/v1776396374/logo-nbl.png"
+    "https://res.cloudinary.com/de7fqcvpf/image/upload/v1777015180/NBL_Png_Green_vlqrsj.png"
 
   const [mobileOpen, setMobileOpen] = useState<boolean>(false)
   const [scrolled, setScrolled] = useState<boolean>(false)
@@ -66,9 +66,14 @@ export default function NavbarClient({ posts }: Props) {
                 <Image
                   src={cloudinaryImage(logo, "logo")}
                   alt="Nusa Bumi Lestari"
-                  width={140}
-                  height={36}
-                  className="h-[30px] w-auto object-contain"
+                  width={180}
+                  height={60}
+                  className="
+                    h-[34px] 
+                    md:h-[44px] 
+                    w-auto 
+                    object-contain
+                  "
                   priority
                 />
               </Link>

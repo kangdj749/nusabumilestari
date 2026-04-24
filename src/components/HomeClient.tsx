@@ -8,6 +8,9 @@ import HeroPremium from "./layout/HeroPremium";
 
 import WhoWeAreSection from "./WhoWeAreSection";
 import SpecializationSection from "./SpecializationSection";
+import ProblemSection from "./home/ProblemSection";
+import SolutionSection from "./home/SolutionSection";
+import ImpactSection from "./home/ImpactSection";
 
 
 /* ================================
@@ -63,9 +66,9 @@ export default function HomeClient() {
 
       <main className="relative">
         <HeroPremium />
-        <WhoWeAreSection/>
-        <SpecializationSection />
-       
+        <ProblemSection />
+        <SolutionSection />
+        <ImpactSection />
         <HybridWhatsAppCTA />
       </main>
     </>
